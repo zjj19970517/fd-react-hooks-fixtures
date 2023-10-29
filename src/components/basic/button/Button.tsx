@@ -1,14 +1,20 @@
 import React, { useContext } from 'react'
 import clsx from 'clsx'
 
-import { ButtonPropsType, DefaultButtonProps } from './buttonProps'
-import { createNamespace } from '../../components/utils'
-import { computedStyle } from './buttonHelper'
-import ButtonContext from './ButtonContext'
+// hooks
+import { useMergeProps } from '../../../common/hooks/useMergeProps'
+
+import { ButtonPropsType, DefaultButtonProps } from './ButtonProps'
+import ButtonContext from './context/ButtonContext'
+
+// utils
+import { createNamespace } from '../../../common/utils/createNamespace'
+import { computedStyle } from './helper/buttonHelper'
 
 const [bem] = createNamespace('button')
 
-const Button: React.FC<ButtonPropsType> = (props = DefaultButtonProps) => {
+const Button: React.FC<ButtonPropsType> = (p) => {
+  const props = useMergeProps(p, DefaultButtonProps)
   const {
     type: _type,
     plain: _plain,

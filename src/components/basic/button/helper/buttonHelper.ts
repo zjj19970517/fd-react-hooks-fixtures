@@ -5,8 +5,8 @@
  * @returns
  */
 export function computedStyle(
-  customStyle: Record<string, string | number>,
-  { color, background }: { color: string; background: string }
+  customStyle: React.CSSProperties | undefined,
+  { color, background }: { color?: string; background?: string }
 ) {
   const style: Record<string, string | number> = {}
   if (color) {

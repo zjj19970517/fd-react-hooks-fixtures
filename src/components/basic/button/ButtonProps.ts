@@ -1,5 +1,5 @@
 import React from 'react'
-import { BaseTypeProps } from '../../components/utils'
+import { BaseTypeProps } from '../../../common/interfaces/BaseTypeProps'
 
 export type ButtonType = 'default' | 'primary' | 'info' | 'warning' | 'danger'
 export type ButtonSize = 'large' | 'normal' | 'small' | 'mini'

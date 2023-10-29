@@ -1,9 +1,9 @@
 import React from 'react'
 import clsx from 'clsx'
 
-import { ButtonGroupPropsType, DefaultButtonGroupProps } from './buttonProps'
-import { createNamespace } from '../../components/utils'
-import ButtonContext from './ButtonContext'
+import ButtonContext from './context/ButtonContext'
+import { ButtonGroupPropsType, DefaultButtonGroupProps } from './ButtonProps'
+import { createNamespace } from '../../../common/utils/createNamespace'
 
 const [bem] = createNamespace('button-group')
 
@@ -29,6 +29,8 @@ const ButtonGroup: React.FC<ButtonGroupPropsType> = (
 
   return (
     <div className={classes} onClick={internalClick} style={style}>
+      {/* ButtonGroup 会包裹 Button 组件 */}
+      {/* 我们可以使用 ButtonContext 将传递给 ButtonGroup 组件的属性，向下传递给 Button 组件 */}
       <ButtonContext.Provider value={{ parent: props }}>
         {children}
       </ButtonContext.Provider>
