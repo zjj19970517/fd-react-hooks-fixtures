@@ -1,14 +1,5 @@
 import React from 'react'
 
-type NativeInputProps = React.DetailedHTMLProps<
-  React.InputHTMLAttributes<HTMLInputElement>,
-  HTMLInputElement
->
-
-export type InputTextAlign = 'left' | 'center' | 'right'
-
-export type InputClearTrigger = 'always' | 'focus'
-
 export type InputType =
   | 'tel'
   | 'text'
@@ -17,7 +8,22 @@ export type InputType =
   | 'search'
   | 'password'
 
-// 支持的 input 原生属性
+export type InputModeType = "none" | "text" | "tel" | "url" | "email" | "numeric" | "decimal" | "search" | undefined;
+
+export type InputTextAlign = 'left' | 'center' | 'right'
+
+export type InputClearTrigger = 'always' | 'focus'
+
+export type InputAutosizeConfig = {
+  maxHeight?: number
+  minHeight?: number
+}
+
+type NativeInputProps = React.DetailedHTMLProps<
+  React.InputHTMLAttributes<HTMLInputElement>,
+  HTMLInputElement
+>
+
 type InputNativeProps = Pick<
   NativeInputProps,
   | 'maxLength'
@@ -38,7 +44,6 @@ type InputNativeProps = Pick<
   | 'onCompositionEnd'
   | 'onClick'
 >
-
 export interface InputSharedProps {
   value?: string
   defaultValue?: string
@@ -68,7 +73,7 @@ export interface InputSharedProps {
   onOverlimit?: () => void
 }
 
-export interface InputPropsType extends InputNativeProps, InputSharedProps {
+export interface InputProps extends InputNativeProps, InputSharedProps {
   /** 输入框类型 */
   type?: InputType
   /** 输入框对齐方式，可选值为 `center` `right` */
@@ -82,5 +87,5 @@ export interface InputPropsType extends InputNativeProps, InputSharedProps {
 export type InputInstance = {
   focus: () => void
   blur: () => void
-  nativeElement: HTMLInputElement | null
+  nativeElement: HTMLInputElement | null | undefined
 }
