@@ -11,8 +11,8 @@ import { Clear } from '@react-vant/icons'
 import { InputInstance, InputModeType, InputProps } from './InputProps'
 
 // hooks
-import { useMergeProps } from '../../../common/hooks/useMergeProps'
-import usePropsValue from '../../../common/hooks/usePropsValue'
+import { useMergeProps } from '../../../common/hooks/use-merge-props'
+import usePropsValue from '../../../common/hooks/use-props-value'
 
 // utils
 import { createNamespace } from '../../../common/utils/createNamespace'

@@ -2,7 +2,7 @@ import React, { useContext } from 'react'
 import clsx from 'clsx'
 
 // hooks
-import { useMergeProps } from '../../../common/hooks/useMergeProps'
+import { useMergeProps } from '../../../common/hooks/use-merge-props'
 
 import { ButtonPropsType, DefaultButtonProps } from './ButtonProps'
 import ButtonContext from './context/ButtonContext'
